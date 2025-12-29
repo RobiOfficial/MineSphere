@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Minecraft Server</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Press Start 2P', cursive;
+      background-image: url('https://wallpapercave.com/uwp/uwp4554911.jpeg');
+      background-size: cover;
+      color: white;
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .logo img {
+      max-width: 300px;
+      margin-bottom: 30px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .buttons {
+      margin-bottom: 10px;
+    }
+
+    .minecraft-button {
+      display: inline-block;
+      background-color: #2c6f2f;
+      padding: 12px 24px;
+      color: white;
+      text-decoration: none;
+      margin: 10px;
+      border-radius: 5px;
+      font-size: 18px;
+      text-align: center;
+      box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .minecraft-button:hover {
+      background-color: #45a049;
+      transform: translateY(-2px);
+    }
+
+    .minecraft-button:active {
+      transform: translateY(2px);
+    }
+
+    .server-ip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 12px 24px;
+      margin: 20px;
+      border-radius: 5px;
+      font-size: 18px;
+      text-align: center;
+      box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      border: 2px dashed #00ffcc;
+      font-weight: bold;
+      cursor: pointer;
+      gap: 10px;
+    }
+
+    .server-ip:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .server-ip:active {
+      transform: translateY(2px);
+    }
+
+    .server-ip span {
+      color: #00ffcc;
+    }
+
+    .copy-message {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #00ffcc;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .copy-message.visible {
+      opacity: 1;
+    }
+
+    .copyright {
+      position: absolute;
+      bottom: 10px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Logo -->
+    <div class="logo">
+      <img src="https://img.icons8.com/?size=100&id=16462&format=png&color=000000" alt="Minecraft Server Logo">
+    </div>
+
+    <!-- Buttons -->
+    <div class="buttons">
+      <a href="https://discord.com" class="minecraft-button" target="_blank">Discord</a>
+      <a href="https://tebex.io" class="minecraft-button" target="_blank">Store</a>
+    </div>
+
+    <!-- Server IP -->
+    <div class="server-ip" onclick="copyIP()">
+      <span id="server-ip-text">play.yourserver.com</span>
+      <img src="https://img.icons8.com/ios-glyphs/30/00ffcc/copy.png" alt="Copy Icon"/>
+    </div>
+    <div id="copy-msg" class="copy-message">IP copied to clipboard!</div>
+  </div>
+
+  <!-- Footer -->
+  <div class="copyright">
+    &copy; 2025 RobiDev. All rights reserved.
+  </div>
+
+  <!-- Script -->
+  <script>
+    function copyIP() {
+      const ip = document.getElementById("server-ip-text").textContent;
+      navigator.clipboard.writeText(ip).then(() => {
+        const msg = document.getElementById("copy-msg");
+        msg.classList.add("visible");
+        setTimeout(() => msg.classList.remove("visible"), 2000);
+      });
+    }
+  </script>
+</body>
+</html>
