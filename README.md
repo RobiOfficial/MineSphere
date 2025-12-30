@@ -3,7 +3,7 @@
 Welcome to **MineSphere**, an open-resource HTML template for Minecraft server landing pages. This template is designed to be fully customizable, beginner-friendly, and extendable for server owners, developers, and the Minecraft community.
 
 > [!NOTE]
-> To install MineSphere, please do NOT clone this repository directly. Instead, download from the releases page.  
+> To install MineSphere, please do NOT clone this repository directly. Instead, download from the **[releases page](https://github.com/RobiOfficial/MineSphere/releases)**.  
 > If you would like to contribute to MineSphere and install from source, please see the **[Contribution Guide](https://github.com/RobiOfficial/MineSphere/wiki/%E2%9C%8F%EF%B8%8F-Contribution-Guide)**.
 
 ![MineShereLogo](https://github.com/RobiOfficial/MineSphere/blob/main/assets%20/img/MineSphere%20Demo%202025.png?raw=true)
